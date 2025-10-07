@@ -36,10 +36,10 @@ on:
 jobs:
   remove_before_flight:
     runs-on: ubuntu-latest
-    name: Remove before flight
+    name: Remove before launch 
     steps:
-      - name: Remove Before Flight
-        uses: actions/hello-world-docker-action@v2
+      - name: Remove Before Launch 
+        uses: actions/remove-before-launch@v1
         with:
           pull_request_body: ${{ github.event.pull_request.body }}
 ```

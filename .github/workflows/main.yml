@@ -3,7 +3,7 @@ on:
     types: [opened, synchronize, reopened, edited]
 
 jobs:
-  remove_before_flight:
+  remove_before_launch:
     runs-on: ubuntu-latest
     name: Remove before launch
     steps:

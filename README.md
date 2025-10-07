@@ -29,6 +29,7 @@ As a result, it's best to have the action used in a separate workflow.
 Here's an example workflow file using the action: 
 
 ```yml
+# .github/workflows/remove-before-launch.yml
 on:
   pull_request:
     types: [opened, synchronize, reopened, edited]
@@ -39,7 +40,7 @@ jobs:
     name: Remove before launch 
     steps:
       - name: Remove Before Launch 
-        uses: actions/remove-before-launch@v1
+        uses: virolea/remove-before-launch@v1.1.1
         with:
           pull_request_body: ${{ github.event.pull_request.body }}
 ```

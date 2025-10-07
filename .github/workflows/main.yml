@@ -1,14 +1,16 @@
-on: [push]
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, edited]
 
 jobs:
   remove_before_flight:
     runs-on: ubuntu-latest
-    name: Test job
+    name: Remove before flight
     steps:
       - name: Checkout
         uses: actions/checkout@v5
       - name: Remove Before Flight action step
-        uses: ./ # Uses an action in the root directory
+        uses: ./
         id: remove_before_flight
         with:
-          pull_request_body: "TEST"
+          pull_request_body: ${{ github.event.pull_request.body }}

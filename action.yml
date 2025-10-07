@@ -1,0 +1,11 @@
+name: "Remove Before Flight"
+description: "Ensure all pending TODOs in the PR description are marked as complete"
+inputs:
+  pull_request_body:
+    description: "The text body of the Pull Request"
+    required: true
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.pull_request_body }}

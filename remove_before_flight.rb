@@ -15,7 +15,8 @@ MARKDOWN = <<~MARKDOWN
 MARKDOWN
 
 
-puts ARGV.to_s
+puts ARGV[0]
+
 REGEX = /^\s*-\s+\[\s\]\s+(.+)$/.freeze
 
 uncompleted_todos = MARKDOWN.scan(REGEX)
@@ -23,5 +24,9 @@ uncompleted_todos = MARKDOWN.scan(REGEX)
 if uncompleted_todos.empty?
   exit 0
 else
+  uncompleted_todos.each do |uncomplete_doto|
+    puts "□ #{uncomplete_doto.first}\n"
+  end
+
   exit 1
 end

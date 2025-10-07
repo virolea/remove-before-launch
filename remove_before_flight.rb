@@ -25,8 +25,10 @@ uncompleted_todos = pull_request_body.scan(REGEX)
 if uncompleted_todos.empty?
   exit 0
 else
-  uncompleted_todos.each do |uncomplete_todo|
-    puts "□ #{uncomplete_todo.first}\n"
+  puts "⚠️ There are still uncompleted todos that need your attention:\n\n"
+
+  uncompleted_todos.each do |uncompleted_todo|
+    puts "□ #{uncompleted_todo.first}\n"
   end
 
   exit 1

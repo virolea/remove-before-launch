@@ -5,7 +5,7 @@ on:
 jobs:
   remove_before_flight:
     runs-on: ubuntu-latest
-    name: Test job
+    name: Remove before flight
     steps:
       - name: Checkout
         uses: actions/checkout@v5

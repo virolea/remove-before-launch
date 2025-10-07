@@ -1,4 +1,6 @@
-on: [push]
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, edited]
 
 jobs:
   remove_before_flight:
@@ -8,7 +10,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
       - name: Remove Before Flight action step
-        uses: ./ # Uses an action in the root directory
+        uses: ./
         id: remove_before_flight
         with:
           pull_request_body: "TEST"

@@ -1,0 +1,14 @@
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, edited]
+
+jobs:
+  remove_before_launch:
+    runs-on: ubuntu-latest
+    name: Remove before launch
+    steps:
+      - name: Remove Before Launch
+        id: remove_before_launch
+        uses: virolea/remove-before-launch@v1.1.1
+        with:
+          pull_request_body: ${{ github.event.pull_request.body }}

@@ -4,15 +4,15 @@ REGEX = /^\s*-\s+\[\s\]\s+(.+)$/.freeze
 
 pull_request_body = ARGV[0]
 
-uncompleted_todos = pull_request_body.scan(REGEX)
+incomplete_todos = pull_request_body.scan(REGEX)
 
-if uncompleted_todos.empty?
+if incomplete_todos.empty?
   exit 0
 else
   puts "⚠️ There are still uncompleted todos that need your attention:\n\n"
 
-  uncompleted_todos.each do |uncompleted_todo|
-    puts "□ #{uncompleted_todo.first}\n"
+  incomplete_todos.each do |incomplete_todo|
+    puts "□ #{incomplete_todo.first}\n"
   end
 
   exit 1

@@ -5,12 +5,12 @@ on:
 jobs:
   remove_before_flight:
     runs-on: ubuntu-latest
-    name: Remove before flight
+    name: Remove before launch
     steps:
       - name: Checkout
         uses: actions/checkout@v5
-      - name: Remove Before Flight action step
+      - name: Remove Before Launch
         uses: ./
-        id: remove_before_flight
+        id: remove_before_launch
         with:
           pull_request_body: ${{ github.event.pull_request.body }}

@@ -1,6 +1,6 @@
-# Remove Before Flight 
+# Remove Before Launch 
 
-Remove Before Flight is a simple Github Action that will fail in case there are any incomplete todo in the PR body description. 
+Remove Before Launch is a simple Github Action that will fail in case there are any incomplete todo in the PR body description. 
 
 PR description Example: 
 

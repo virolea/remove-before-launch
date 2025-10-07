@@ -1,4 +1,4 @@
-name: "Remove Before Flight"
+name: "Remove Before Launch"
 description: "Ensure all pending TODOs in the PR description are marked as complete"
 inputs:
   pull_request_body:

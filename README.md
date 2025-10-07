@@ -39,7 +39,7 @@ jobs:
     name: Remove before launch 
     steps:
       - name: Remove Before Launch 
-        uses: actions/remove-before-launch@v1
+        uses: virolea/remove-before-launch@v1.1.2
         with:
           pull_request_body: ${{ github.event.pull_request.body }}
 ```

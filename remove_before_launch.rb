@@ -1,18 +1,16 @@
 # frozen_string_literal: true
 
-REGEX = /^\s*-\s+\[\s\]\s+(.+)$/.freeze
+require_relative "lib/pull_request_body"
 
-pull_request_body = ARGV[0]
+pull_request_body = PullRequestBody.new(text: ARGV[0])
 
-incomplete_todos = pull_request_body.scan(REGEX)
-
-if incomplete_todos.empty?
+if pull_request_body.incomplete_todos.empty?
   exit 0
 else
   puts "⚠️ There are still uncompleted todos that need your attention:\n\n"
 
-  incomplete_todos.each do |incomplete_todo|
-    puts "□ #{incomplete_todo.first}\n"
+  pull_request_body.incomplete_todos.each do |incomplete_todo|
+    puts "□ #{incomplete_todo}\n"
   end
 
   exit 1

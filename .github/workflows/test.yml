@@ -1,0 +1,22 @@
+on:
+  pull_request:
+  push:
+    branches: [ main ]
+
+jobs:
+  remove_before_launch:
+    runs-on: ubuntu-latest
+    name: Remove before launch
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: .ruby-version
+          bundler-cache: true
+
+      - name: Run Ruby tests
+        run: rake test
